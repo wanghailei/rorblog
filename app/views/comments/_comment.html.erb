@@ -1,6 +1,6 @@
 <% unless comment.archived? %>
-<div style="background-color: #EEEEEE; margin-bottom: 10px; padding:10px;">
-	<p><strong><%= comment.commenter %></strong>(<%= comment.created_at %>) :</p>
+<div style="border-top: solid 1px #DDDDDD10">
+	<p><strong><%= comment.commenter %></strong><small> <%= time_tag comment.created_at, "data-local": "time-ago" %></small> :</p>
 	<p><%= comment.body %> </p>
 	<p><small><%= link_to "Delete", [ comment.article, comment ], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></small></p>
 </div>
